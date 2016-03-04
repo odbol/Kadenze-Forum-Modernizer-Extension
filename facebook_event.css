@@ -1,16 +1,22 @@
-.facebook_event_to_gcal.gcal_link {
-	margin-left: 10px;
-	font-weight: bold;
-	cursor: pointer;
-	
-	border: 1px solid #7C2C2C;
-	background: #c6322a;
-	color: #fff;
-	padding: 3px;
+.memefree_hidden  {
+	/*width: 100px;*/
+	height: 30px;
+
+	overflow: hidden;
+/*
+	transform: scale(0.2, 0.2);*/
+
+
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all  0.3s ease;
 }
 
-.facebook_event_to_gcal.invalid-date {
-	font-size: 75px;
-	font-weight: bold;
-	text-align: center;
+.memefree_hidden:hover  {
+	
+	width: inherit;
+	height: inherit;
+
+/*	transform: scale(1, 1);*/
 }
