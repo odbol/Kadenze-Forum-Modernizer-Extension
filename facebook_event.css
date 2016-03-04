@@ -3,6 +3,11 @@
 	height: 30px;
 
 	overflow: hidden;
+
+	/* to keep the overlay in line */
+	position: relative;
+
+
 /*
 	transform: scale(0.2, 0.2);*/
 
@@ -10,7 +15,7 @@
 	-webkit-transition: all 0.3s ease;
 	-moz-transition: all 0.3s ease;
 	-o-transition: all 0.3s ease;
-	transition: all  0.3s ease;
+	transition: all  0.3s ease
 }
 
 .memefree_hidden:hover  {
@@ -20,3 +25,38 @@
 
 /*	transform: scale(1, 1);*/
 }
+
+
+.memefree_hidden:after  {	
+	content: " ";
+
+	position: absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+
+	background: red;
+
+	opacity:0.9;
+
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all  0.3s ease
+
+
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0+0,1+90 */
+	background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 90%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 90%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 90%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+}
+
+
+
+.memefree_hidden:hover:after  {	
+	opacity: 0;
+
+}
+
