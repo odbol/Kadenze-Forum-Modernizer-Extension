@@ -1,12 +1,12 @@
-.memefree_hidden  {
-	/*width: 100px;*/
-	height: 30px;
-
+.inliner_forum_wrapper  {
 	overflow: hidden;
+	width: 100%;
 
 	/* to keep the overlay in line */
 	position: relative;
 
+
+	box-shadow: #ccc 1px 1px 11px;
 
 /*
 	transform: scale(0.2, 0.2);*/
@@ -17,6 +17,43 @@
 	-o-transition: all 0.3s ease;
 	transition: all  0.3s ease
 }
+
+.inliner_forum_wrapper {
+	height:0;
+}
+
+.inliner_forum_wrapper.inliner_opened,
+.inliner_forum_wrapper iframe {
+
+	width: 100%;
+    min-height: 200px;
+    height: calc(90vh - 60px);
+
+}
+
+
+.inliner_forum_wrapper iframe {
+    /*margin-top: -62px; 
+*/
+    margin-top: -386px;/* hide the kadenze bar and the class header */
+	height: calc((90vh - 60px) + 386px);
+
+    border: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .memefree_hidden:hover  {
 	

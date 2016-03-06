@@ -1,26 +1,56 @@
-//$.ready(function ($)
+jQuery(function ($) {
 
-var FACEBOOK_DIV_TO_HIDE = '.userContentWrapper .userContent';
+var links = 'a.forums-index__thread_info_title',
+	
+	currentOpenHref = null,
+	currentOpenFrame = null,
 
-var hasScrolled = 0,
-	checkPosts = function () {
-		
-		if (hasScrolled++ < 10) {
-			hasScrolled = 0;
+	closeCurrent = function () {
+		if (currentOpenFrame == null) return;
 
-			var crap = jQuery(FACEBOOK_DIV_TO_HIDE).next();
+		var oldFrame = currentOpenFrame
+			.removeClass('inliner_opened');
 
-			crap.addClass('memefree_hidden');
+		setTimeout(oldFrame.remove, 1000);
 
-		}
+		currentOpenFrame = null;
 	},
-	onScroll = function () {
-		hasScrolled = 0;
+
+	openPostIn = function (href, el) {
+
+		closeCurrent();
+
+		// only open if they're not clicking the link again to close it...
+		if (currentOpenHref !== href) {
+
+			var $el = $(el),
+				holder = $el.parents('.forums-index__thread'),
+				wrapper = $('<div class="inliner_forum_wrapper"><iframe src="' + 
+					href + '" /></div>');
+
+			wrapper
+				.insertAfter(holder)
+				.addClass('inliner_opened');
+
+			currentOpenFrame = wrapper;
+			currentOpenHref = href;
+
+			// scroll to top if needed,
+			// AFTER height has animated!
+			setTimeout(function () {
+					window.scrollTo(0, $el.offset().top);
+				},
+				500);
+		}
 	};
 
 
+	$('.forums-index__thread-list')
+		.on('click', links, function () {
 
-// Since facebook uses the history API, I have to check for facebook event URLs
-setInterval(checkPosts, 1000);
+			openPostIn(this.href, this);
 
-window.addEventListener('scroll', onScroll);
+			return false;
+		});
+
+});
