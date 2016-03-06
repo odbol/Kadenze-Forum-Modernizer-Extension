@@ -27,7 +27,8 @@
 
 	width: 100%;
     min-height: 200px;
-    height: calc(90vh - 60px);
+    height: calc(90vh - 180px);
+	max-height: 300px;
 
 }
 
@@ -36,7 +37,8 @@
     /*margin-top: -62px; 
 */
     margin-top: -386px;/* hide the kadenze bar and the class header */
-	height: calc((90vh - 60px) + 386px);
+	height: calc((90vh - 180px) + 386px);
+	max-height: 686px;
 
     border: 0;
 }
