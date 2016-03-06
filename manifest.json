@@ -2,20 +2,18 @@
   "name": "Kadenze Forum Modernizer",
   "manifest_version" : 2,
   "version": "1.2.8",
-  "description": "",
+  "description": "Enhancements to the online classroom site Kadenze: makes forum posts open inline, so you can browse them faster.",
   "page_action": {
-    "default_icon": "calendar_icon_16.png"
+    "default_icon": "ic_forum_black_24dp/android/drawable-xxxhdpi/ic_forum_black_24dp.png"
   },
   "icons": {
-    "16" : "calendar_icon_16.png",
-    "48" : "calendar_icon_48.png",
-    "128" : "calendar_icon_128.png"
+    "16" : "ic_forum_black_24dp/android/drawable-mdpi/ic_forum_black_24dp.png",
+    "48" : "ic_forum_black_24dp/android/drawable-xhdpi/ic_forum_black_24dp.png",
+    "128" : "ic_forum_black_24dp/android/drawable-xxxhdpi/ic_forum_black_24dp.png"
   },
   "permissions": [
     "http://*.kadenze.com/*",
-    "https://*.kadenze.com/*",
-    "http://*.google.com/*",
-    "https://*.google.com/*"
+    "https://*.kadenze.com/*"
   ],
   "content_scripts": [
     {
