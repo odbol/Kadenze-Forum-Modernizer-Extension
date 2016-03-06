@@ -42,6 +42,9 @@ var links = 'a.forums-index__thread_info_title',
 				},
 				500);
 		}
+		else {
+			currentOpenHref = null;
+		}
 	};
 
 
